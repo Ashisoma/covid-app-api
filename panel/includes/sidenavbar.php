@@ -28,12 +28,12 @@
                 Users
             </a>
             <?php
-            if ($user->category = 7) {
-                # code...
+            if ($user->category == 7) {
+                # code... to change the views here
                 echo "  <div class=\"sb-sidenav-menu-heading\">System Management</div>
                 <a id=\"navUserCategories\" class=\"nav-link\" href=\"usercategories\">
                     <div class=\"sb-nav-link-icon\"><i class=\"fas fa-users-cog\"></i></div>
-                    User Category and $user->category
+                    User Category
                 </a>";
             
             } else {
