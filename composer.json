@@ -1,0 +1,30 @@
+{
+    "name": "chs/covid-app",
+    "type": "project",
+    "description": "An API for the covid app.",
+    "authors": [
+        {
+            "name": "Jemimah Kinyua",
+            "email": "jwambui@chskenya.org"
+        },
+        {
+            "name": "Joseph Kimani",
+            "email": "jkimani@chskenya.org"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^7.27",
+        "vlucas/phpdotenv": "^5.3",
+        "bramus/router": "^1.5",
+        "firebase/php-jwt": "^5.2",
+        "ext-json": "*",
+        "box/spout": "^3.3",
+        "setasign/fpdf": "^1.8"
+    },
+    "autoload": {
+        "classmap": [
+            "models", "controllers", "controllers/utils", "controllers/web"
+        ],
+        "files": ["bootstrap.php","functions.php"]
+    }
+}
