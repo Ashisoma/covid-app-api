@@ -8,10 +8,9 @@
 ## Description
 
   >Tiba Tekelezi is a mobile phone and web based application used for TB Covid19 Bi Directional screening and Testing.
-    >
+    
   >The web and the app both us the same api and backend to work
 
-{This is a detailed description of your application, including its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }
 
 ## Technologies Used
 
@@ -22,7 +21,7 @@
 - JWT
 - Bootstrap
 
-## Installation Requirements
+## Installation Requirements for local tests
 
 1. [XAMPP](https://www.apachefriends.org/download.html), [WAMPP](https://sourceforge.net/projects/wampserver/) or [LAMPP](https://ubuntu.com/server/docs/lamp-applications) for linux users.
 
@@ -37,14 +36,14 @@
   
 - **Mobile app set up**
 
-  - Clone/download the repository
+  - Clone/download the [repository](https://github.com/Ashisoma/covid-app)
   - Open with android studio
   - Build the dependancies for the project
-  - You have to set up domain configuration in the .
+  - You have to set up domain configuration in [here]().
 
 ## Support and contact details
 
->Send an email to the current [development team](ookali@chskenya.org)
+>Send an email to the current [development team](oonesmus@chskenya.org)
 
 ### License
 
