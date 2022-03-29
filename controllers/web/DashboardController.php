@@ -4,7 +4,9 @@ namespace controllers\web;
 
 use controllers\utils\Utility;
 use models\County;
+use models\LabRequest;
 use models\PatientScreening;
+use models\RadiologyRequest;
 use models\SubCounty;
 
 class DashboardController
@@ -21,10 +23,15 @@ class DashboardController
         //get screening
         try {
             //TODO filter later
+            $user = $_SESSION['user'];
             $facilityController = new FacilityController();
             $labController = new LabController();
+            $UserFacilty2 = $user->facility;
+            $UserLab = LabRequest::count();
+
             $dashboardData = [];
             $dashboardData['screenings'] = PatientScreening::all();
+            $dashboardData['radiology'] = RadiologyRequest::all();
             $dashboardData['counties'] = $this->getCounties();
             $dashboardData['facilities'] = $facilityController->getFacilities();
             $dashboardData['labRequests'] = $labController->getLabRequests();
