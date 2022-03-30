@@ -261,13 +261,7 @@ class MobileAppController
     // get the routing for the other data to be pulled by the app 
     public function getPatientHistory($patientID)
     {
-        // $history = PatientHistory::where("patient_id", $patientID)->get();
         $lastScreening = PatientTriage::where("patient_id", $patientID)->orderBy('id', 'DESC')->first();
-/*
-        foreach ($contacts as $contact) {
-            $contact['traced'] =
-
-        }*/
 
         return $lastScreening;
     }
