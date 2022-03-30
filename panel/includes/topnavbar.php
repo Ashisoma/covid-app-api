@@ -48,7 +48,7 @@
             type: "GET",
             url: "./logout",
             success: () => {
-                window.location.replace("login.html");
+                window.location.replace("login.php");
             },
             error: error => {
                 toastr.error("Unable to log out. Try again later", err.status)

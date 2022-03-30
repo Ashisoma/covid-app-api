@@ -200,6 +200,11 @@ $router->post("/panel/register", function () {
     UsersController::register($_POST);
 });
 
+$router->post("/panel/forgot_reset", function () {
+    $userData = $_POST;
+    UsersController::forgot_pass($userData);
+});
+
 $router->post("/panel/forgot_password", function () {
 
 });

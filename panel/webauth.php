@@ -2,15 +2,15 @@
 require_once "./../vendor/autoload.php";
 session_start();
 if (!isset($_SESSION['user'])) {
-    header('Location: login.html');
+    header('Location: login.php');
 }
 if (!isset($_SESSION['expires_at'])) {
-    header('Location: login.html');
+    header('Location: login.php');
 } else {
     if(time() > $_SESSION['expires_at']){
         session_unset();
         session_destroy();
-        header('Location: login.html');
+        header('Location: login.php');
     }
 }
 
