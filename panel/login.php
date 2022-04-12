@@ -65,7 +65,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="#" id="forgotPasswordBtn">Forgot Password?</a>
+                                    <a class="small" href="forgot-password.php" id="forgotPassword">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
                                     <a class="small" href="register.php">Activate your Account!</a>
@@ -118,33 +118,33 @@
             }
         })
     }
-    document.getElementById("forgotPasswordBtn").addEventListener("click", ()=>{
-                let email = inputEmailAddress.value.trim();
+    document.getElementById("forgotPassword").addEventListener("click", ()=>{
+                let inputPhone = document.getElementById('inputPhone')
                 // let password  = inputPassword.value;
-                if (email == "") {
+                if (inputPhone == "") {
                     window.alert("Check your credentials and try again.");
                 }
-                else{
-                    $.ajax({
-                        type: "POST",
-                        url:"password_reset",
-                        data:{
-                            email:email,        
-                        },
-                        success: (response) => {
-                            // let mResponse = JSON.parse(response);
-                            // console.log(mResponse);
-                            if(response.code = 200){
-                                // console.log(mResponse.data);
-                                window.location.replace("forgot_password");
-                             }else {
-                            window.alert("Something went wrong. Please try again.");
-                        }
+                // else{
+                //     $.ajax({
+                //         type: "POST",
+                //         url:"password_reset",
+                //         data:{
+                //             email:email,        
+                //         },
+                //         success: (response) => {
+                //             // let mResponse = JSON.parse(response);
+                //             // console.log(mResponse);
+                //             if(response.code = 200){
+                //                 // console.log(mResponse.data);
+                //                 window.location.replace("forgot_password");
+                //              }else {
+                //             window.alert("Something went wrong. Please try again.");
+                //         }
                         
-                        },
+                //         },
                     
-                    })
-                }
+                //     })
+                // }
             })
 </script>
 </body>

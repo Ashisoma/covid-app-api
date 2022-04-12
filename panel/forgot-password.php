@@ -53,14 +53,11 @@
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-primary btn-user btn-block" onclick="registerAccount();">
-                                    Register Account
+                                    Reset Password
                                 </a>
 
                             </form>
                             <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.php">Forgot Password?</a>
-                            </div>
                             <div class="text-center">
                                 <a class="small" href="login.php">Already have an account? Login!</a>
                             </div>
@@ -109,6 +106,35 @@
                 }
             })
         }
+
+        document.getElementById("forgotPassword").addEventListener("click", ()=>{
+            const inputPhone = document.getElementById('inputPhone')
+                // let password  = inputPassword.value;
+                if (inputPhone == "") {
+                    window.alert("Check your credentials and try again.");
+                }
+                // else{
+                //     $.ajax({
+                //         type: "POST",
+                //         url:"password_reset",
+                //         data:{
+                //             email:email,        
+                //         },
+                //         success: (response) => {
+                //             // let mResponse = JSON.parse(response);
+                //             // console.log(mResponse);
+                //             if(response.code = 200){
+                //                 // console.log(mResponse.data);
+                //                 window.location.replace("forgot_password");
+                //              }else {
+                //             window.alert("Something went wrong. Please try again.");
+                //         }
+                        
+                //         },
+                    
+                //     })
+                // }
+            })
     </script>
 
 </body>
