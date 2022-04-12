@@ -78,6 +78,19 @@ class UsersController
         }
     }
 
+    public static function setActiveToZero($mobile){
+        try {
+            $phone = $mobile['phone'];
+            throw_if(strlen($phone) < 10, new \Exception("invalid phone number. " . $phone, INVALID_DATA_RESPONSE_CODE));
+            $user = User::where('phone', $phone)->where('active', 1)->firstOrFail();
+            $user->active = 0;
+            $user->save();
+        } catch (\Throwable $e) {
+            logError($e->getCode(), $e->getMessage());
+            http_response_code(PRECONDITION_FAILED_ERROR_CODE);
+        } 
+    }
+
     public static function forgot_pass($userData){
         try {
             $phone = $userData['phone'];

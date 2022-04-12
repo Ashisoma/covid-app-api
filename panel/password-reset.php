@@ -43,7 +43,7 @@
                                         placeholder="Phone Number">
                                 </div>
                                 
-                                <a href="#" class="btn btn-primary btn-user btn-block" onclick="registerAccount();">
+                                <a href="#" id="forgotPassword" class="btn btn-primary btn-user btn-block" onclick="resetActive();">
                                     Reset Password
                                 </a>
 
@@ -70,61 +70,46 @@
     <script src="js/sb-admin-2.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-        const inputPhone = document.getElementById('inputPhone')
-        const inputPassword = document.getElementById('inputPassword')
-        const inputPasswordRepeat = document.getElementById('inputPasswordRepeat')
+        // const inputPhone = document.getElementById('inputPhone')
+        // const inputPassword = document.getElementById('inputPassword')
+        // const inputPasswordRepeat = document.getElementById('inputPasswordRepeat')
 
-        function registerAccount(){
+        function resetActive(){
             let phone = inputPhone.value.trim()
-            let password = inputPassword.value.trim()
-            let passwordRepeat = inputPasswordRepeat.value.trim()
-            if(password !== passwordRepeat) {
-                alert("Please enter similar passwords.")
+            if(phone == '') {
+                alert("Input a valid phone number!")
             }
             $.ajax({
-                type: "POST",
-                url: "register",
-                data: {
-                    phone: phone,
-                    password: password,
-                },
-                success: response => {
-                    window.location.replace("index");
-                },
-                error: err => {
-                    toastr.error("Unable to register")
-                }
-            })
+                        type: "POST",
+                        url:"set_active",
+                        data:{
+                            phone: phone,        
+                        },
+                        success: (response) => {
+                            // let mResponse = JSON.parse(response);
+                            console.log(response);
+                            if(response.code = 200){
+                                // console.log(mResponse.data);
+                                window.location.replace("forgot-password");
+                             }else {
+                            window.alert("Something went wrong. Please try again.");
+                        }
+                        
+                        },
+                    
+                    })
         }
 
-        document.getElementById("forgotPassword").addEventListener("click", ()=>{
-            const inputPhone = document.getElementById('inputPhone')
-                // let password  = inputPassword.value;
-                if (inputPhone == "") {
-                    window.alert("Check your credentials and try again.");
-                }
-                // else{
-                //     $.ajax({
-                //         type: "POST",
-                //         url:"password_reset",
-                //         data:{
-                //             email:email,        
-                //         },
-                //         success: (response) => {
-                //             // let mResponse = JSON.parse(response);
-                //             // console.log(mResponse);
-                //             if(response.code = 200){
-                //                 // console.log(mResponse.data);
-                //                 window.location.replace("forgot_password");
-                //              }else {
-                //             window.alert("Something went wrong. Please try again.");
-                //         }
-                        
-                //         },
+        // document.getElementById("forgotPassword").addEventListener("click", ()=>{
+        //     const inputPhone = document.getElementById('inputPhone')
+        //         // let password  = inputPassword.value;
+        //         if (inputPhone == "") {
+        //             window.alert("Check your credentials and try again.");
+        //         }
+        //         else{
                     
-                //     })
-                // }
-            })
+        //         }
+        //     })
     </script>
 
 </body>

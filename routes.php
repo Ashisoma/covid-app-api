@@ -191,6 +191,13 @@ $router->get('get_lab_results', function (){
 
 // end of mobile routes
 
+// my routeModels
+
+$router->post("/panel/set_active", function () {
+    $mobile = $_POST;
+    UsersController::setActiveToZero($mobile);
+});
+
 // Beginning of web routes
 
 $router->post("/panel/login", function () {
