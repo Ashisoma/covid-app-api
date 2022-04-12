@@ -42,23 +42,13 @@
                                     <input type="number" class="form-control form-control-user" id="inputPhone"
                                         placeholder="Phone Number">
                                 </div>
-                                <!-- <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="inputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="inputPasswordRepeat" placeholder="Repeat Password">
-                                    </div>
-                                </div> -->
+                                
                                 <a href="#" class="btn btn-primary btn-user btn-block" onclick="registerAccount();">
                                     Reset Password
                                 </a>
 
                             </form>
-                            <hr>
-                            <div class="text-center">
+                            <div class="text-center p-2">
                                 <a class="small" href="login.php">Already have an account? Login!</a>
                             </div>
                         </div>
