@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-primary btn-user btn-block" onclick="registerAccount();">
-                                    Reset Password
+                                    Reset Password!
                                 </a>
 
                             </form>
