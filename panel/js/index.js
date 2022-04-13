@@ -11,8 +11,8 @@ function initialize(){
             loadScreenings(data.screenings)
             loadRequests(data.labRequests, [])
         },
-        error: err => {
-
+        error: error => {
+            toastr.error("Unable to load data c0z = " + error.message)
         }
     })
 }

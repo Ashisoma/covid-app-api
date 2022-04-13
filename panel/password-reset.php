@@ -102,16 +102,6 @@
                     })
         }
 
-        // document.getElementById("forgotPassword").addEventListener("click", ()=>{
-        //     const inputPhone = document.getElementById('inputPhone')
-        //         // let password  = inputPassword.value;
-        //         if (inputPhone == "") {
-        //             window.alert("Check your credentials and try again.");
-        //         }
-        //         else{
-                    
-        //         }
-        //     })
     </script>
 
 </body>
