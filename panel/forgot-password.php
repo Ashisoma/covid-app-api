@@ -107,34 +107,7 @@
             })
         }
 
-        document.getElementById("forgotPassword").addEventListener("click", ()=>{
-            const inputPhone = document.getElementById('inputPhone')
-                // let password  = inputPassword.value;
-                if (inputPhone == "") {
-                    window.alert("Check your credentials and try again.");
-                }
-                // else{
-                //     $.ajax({
-                //         type: "POST",
-                //         url:"password_reset",
-                //         data:{
-                //             email:email,        
-                //         },
-                //         success: (response) => {
-                //             // let mResponse = JSON.parse(response);
-                //             // console.log(mResponse);
-                //             if(response.code = 200){
-                //                 // console.log(mResponse.data);
-                //                 window.location.replace("forgot_password");
-                //              }else {
-                //             window.alert("Something went wrong. Please try again.");
-                //         }
-                        
-                //         },
-                    
-                //     })
-                // }
-            })
+   
     </script>
 
 </body>

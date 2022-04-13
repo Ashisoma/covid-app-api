@@ -96,7 +96,9 @@
                         }
                         
                         },
-                    
+                        error: err => {
+                            toastr.error("Unable To reset. Kindly try again")
+                        }
                     })
         }
 
