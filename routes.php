@@ -191,6 +191,13 @@ $router->get('get_lab_results', function (){
 
 // end of mobile routes
 
+// my routeModels
+
+$router->post("/panel/set_active", function () {
+    $mobile = $_POST;
+    UsersController::setActiveToZero($mobile);
+});
+
 // Beginning of web routes
 
 $router->post("/panel/login", function () {
@@ -198,6 +205,11 @@ $router->post("/panel/login", function () {
 });
 $router->post("/panel/register", function () {
     UsersController::register($_POST);
+});
+
+$router->post("/panel/forgot_reset", function () {
+    $userData = $_POST;
+    UsersController::forgot_pass($userData);
 });
 
 $router->post("/panel/forgot_password", function () {

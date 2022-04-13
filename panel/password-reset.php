@@ -35,33 +35,20 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Password Reset!</h1>
                             </div>
                             <form class="user">
                                 <div class="form-group">
                                     <input type="number" class="form-control form-control-user" id="inputPhone"
                                         placeholder="Phone Number">
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="inputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="inputPasswordRepeat" placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <a href="#" class="btn btn-primary btn-user btn-block" onclick="registerAccount();">
-                                    Register Account
+                                
+                                <a href="#" id="forgotPassword" class="btn btn-primary btn-user btn-block" onclick="resetActive();">
+                                    Reset Password
                                 </a>
 
                             </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
-                            <div class="text-center">
+                            <div class="text-center p-2">
                                 <a class="small" href="login.html">Already have an account? Login!</a>
                             </div>
                         </div>
@@ -83,32 +70,38 @@
     <script src="js/sb-admin-2.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-        const inputPhone = document.getElementById('inputPhone')
-        const inputPassword = document.getElementById('inputPassword')
-        const inputPasswordRepeat = document.getElementById('inputPasswordRepeat')
+        // const inputPhone = document.getElementById('inputPhone')
+        // const inputPassword = document.getElementById('inputPassword')
+        // const inputPasswordRepeat = document.getElementById('inputPasswordRepeat')
 
-        function registerAccount(){
+        function resetActive(){
             let phone = inputPhone.value.trim()
-            let password = inputPassword.value.trim()
-            let passwordRepeat = inputPasswordRepeat.value.trim()
-            if(password !== passwordRepeat) {
-                alert("Please enter similar passwords.")
+            if(phone == '') {
+                alert("Input a valid phone number!")
             }
             $.ajax({
-                type: "POST",
-                url: "register",
-                data: {
-                    phone: phone,
-                    password: password,
-                },
-                success: response => {
-                    window.location.replace("index");
-                },
-                error: err => {
-                    toastr.error("Unable to register")
-                }
-            })
+                        type: "POST",
+                        url:"set_active",
+                        data:{
+                            phone: phone,        
+                        },
+                        success: (response) => {
+                            // let mResponse = JSON.parse(response);
+                            console.log(response);
+                            if(response.code = 200){
+                                // console.log(mResponse.data);
+                                window.location.replace("forgot-password");
+                             }else {
+                            window.alert("Something went wrong. Please try again.");
+                        }
+                        
+                        },
+                        error: err => {
+                            toastr.error("Unable To reset. Kindly try again")
+                        }
+                    })
         }
+
     </script>
 
 </body>

@@ -35,7 +35,7 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Password Reset!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
                             <form class="user">
                                 <div class="form-group">
@@ -53,11 +53,14 @@
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-primary btn-user btn-block" onclick="registerAccount();">
-                                    Reset Password
+                                    Register Account
                                 </a>
 
                             </form>
                             <hr>
+                            <div class="text-center">
+                                <a class="small" href="forgot-password.php">Forgot Password?</a>
+                            </div>
                             <div class="text-center">
                                 <a class="small" href="login.html">Already have an account? Login!</a>
                             </div>
@@ -93,21 +96,19 @@
             }
             $.ajax({
                 type: "POST",
-                url: "forgot_reset",
+                url: "register",
                 data: {
                     phone: phone,
                     password: password,
                 },
                 success: response => {
-                    window.location.replace("login.html");
+                    window.location.replace("index");
                 },
                 error: err => {
-                    toastr.error("Unable to reset password")
+                    toastr.error("Unable to register")
                 }
             })
         }
-
-   
     </script>
 
 </body>
