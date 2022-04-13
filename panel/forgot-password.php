@@ -59,7 +59,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="login.php">Already have an account? Login!</a>
+                                <a class="small" href="login.html">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
@@ -93,16 +93,16 @@
             }
             $.ajax({
                 type: "POST",
-                url: "register",
+                url: "forgot_reset",
                 data: {
                     phone: phone,
                     password: password,
                 },
                 success: response => {
-                    window.location.replace("index");
+                    window.location.replace("login.html");
                 },
                 error: err => {
-                    toastr.error("Unable to register")
+                    toastr.error("Unable to reset password")
                 }
             })
         }
