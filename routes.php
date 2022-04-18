@@ -189,6 +189,12 @@ $router->get('get_lab_results', function (){
     echo json_encode($controller->getLabRequests($patientId));
 });
 
+// mobile forgot password not implemented on the application
+$router->post('reset_password', function (){
+    require "authMobile.php";
+    $controller = new MobileAppController();
+    $controller->mobile_forgot_pass($_POST);
+});
 // end of mobile routes
 
 // my routeModels

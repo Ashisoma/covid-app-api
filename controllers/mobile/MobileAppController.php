@@ -75,6 +75,24 @@ class MobileAppController
         }
     }
 
+    public static function mobile_forgot_pass($userData){
+        try {
+            $phone = $userData['phone'];
+            $password = $userData['password'];
+            throw_if(strlen($phone) < 10, new \Exception("invalid phone number. " . $phone, INVALID_DATA_RESPONSE_CODE));
+            $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
+            $user = User::where('phone', $phone)->where('active', 0)->firstOrFail();
+            $user->password = $hashedpassword;
+            $user->active = 1;
+            $user->save();
+            
+            self::login($userData);
+        } catch (\Throwable $e) {
+            logError($e->getCode(), $e->getMessage());
+            http_response_code(PRECONDITION_FAILED_ERROR_CODE);
+        }
+    }
+
     public function register($userData)
     {
         $params = ['phone', 'password'];
