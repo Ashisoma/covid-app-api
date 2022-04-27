@@ -43,7 +43,7 @@
 
 ## Support and contact details
 
->Send an email to the current [development team](oonesmus@chskenya.org)
+>Send an email to the current [development team](kkamenwa@chskenya.org) or [developer](ashisomaokal@gmail.com)
 
 ### License
 
